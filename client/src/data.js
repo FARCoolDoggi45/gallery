@@ -1,4 +1,7 @@
-const MAX_COMMENTS = 10
+import {getRandomInt, getRandomArrayElement} from "./util.js";
+import {PICTURE_DESCRIPTIONS, COMMENT_MESSAGES, USER_NAMES} from "./const.js";
+
+const MAX_COMMENT_COUNT = 10
 
 function generateUser() {
     return {
@@ -32,15 +35,15 @@ function generatePicture(maxId) {
     usedPictureIds.push(pictureId);
 
     const comments = [];
-    for (let i = 0; i < getRandomInt(MAX_COMMENTS); i++) {
-        comments.push(generateComment(maxId * MAX_COMMENTS));
+    for (let i = 0; i < getRandomInt(0, MAX_COMMENT_COUNT); i++) {
+        comments.push(generateComment(maxId * MAX_COMMENT_COUNT));
     }
 
     return {
         id: pictureId,
-        url: `./img/pictures/${getRandomInt(1, 10)}.jpg`,
+        url: `./photos/${getRandomInt(1, 25)}.jpg`,
         description: getRandomArrayElement(PICTURE_DESCRIPTIONS),
-        likes: getRandomInt(1, 200000),
+        likes: getRandomInt(1, 2000),
         comments: comments 
     };
 }
@@ -55,4 +58,4 @@ function generatePictures(count) {
     return pictures;
 }
 
-console.log(generatePictures(10));
+export {generatePictures};

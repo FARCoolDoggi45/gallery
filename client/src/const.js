@@ -36,3 +36,9 @@ const USER_NAMES = [
     'Даша',
     'Оксана',
 ];
+
+export {
+    PICTURE_DESCRIPTIONS,
+    COMMENT_MESSAGES,
+    USER_NAMES
+};

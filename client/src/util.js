@@ -7,3 +7,5 @@ function getRandomInt(min, max) {
 function getRandomArrayElement(array) {
     return array[getRandomInt(0, array.length - 1)];
 }
+
+export {getRandomInt, getRandomArrayElement};
