@@ -1,4 +1,4 @@
-import {renderPicturePreview} from './picture-preview.js';
+import {renderPicturePreview} from './preview-modal.js';
 
 const previewModalElement = document.querySelector('.big-picture'); 
 const previeModalCloseElement = document.querySelector('.big-picture__cancel')
