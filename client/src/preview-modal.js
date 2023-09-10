@@ -1,21 +1,17 @@
+import {renderCommentList} from "./comment-list.js";
+
+const previewModalElement = document.querySelector('.big-picture');
+const previeModalCloseElement = document.querySelector('.big-picture__cancel');
 const previewAvatarElement = document.querySelector('.big-picture__social img');
 const previewImgElement= document.querySelector('.big-picture__img img');
 const likeCountElement = document.querySelector('.likes-count');
 const renderedCommentCoutElement = document.querySelector('.comments-count--rendered');
 const commentAvatarElement = document.querySelector('#comment-form img');
-const commentListElement = document.querySelector('.social__comments');
 const commentCountElement = document.querySelector('.comments-count');
-const commentTemplate = document.querySelector('#comment')
-    .content
-    .querySelector('.social__comment');
 
-const renderCommentList = (comments) => {
-    commentListElement.innerHTML = '';
-    for (const comment of comments) {
-        const commentElement = commentTemplate.cloneNode(true);
-        commentElement.querySelector('.social__text').textContent = comment.message;
-        commentElement.querySelector('.social__picture').setAttribute('src', './avatars/1.jpeg');
-        commentListElement.append(commentElement);
+const onModalEscKeydown = (evt) => {
+    if (evt.code === 'Escape') {
+        closePreviewModal();
     }
 };
 
@@ -29,4 +25,17 @@ const renderPicturePreview = (picture) => {
     renderCommentList(picture.comments);
 };
 
-export {renderPicturePreview};
+const openPreviewModal = (picture) => {
+    renderPicturePreview(picture);
+    previewModalElement.classList.remove("hidden");
+    previeModalCloseElement.addEventListener('click', closePreviewModal);
+    document.addEventListener('keydown', onModalEscKeydown);
+};
+
+const closePreviewModal = () => {
+    previewModalElement.classList.add('hidden');
+    previeModalCloseElement.removeEventListener('click', closePreviewModal);
+    document.removeEventListener('keydown', onModalEscKeydown);
+};
+
+export {openPreviewModal};
