@@ -25,7 +25,7 @@
     <header id="page-header" class="main-header" data-guest="true">
         <div class="container">
             <nav class="main-header-nav">
-                <a class="logo">gallery-app</a>
+                <a class="logo">anonymous-sect</a>
 
                 <!-- guest-menu -->
                 <ul id="guest-menu" class="site-navigation">
@@ -92,7 +92,7 @@
                     >
 
                         <!-- Изначальное состояние поля для загрузки изображения -->
-                        <fieldset class="img-upload__start">
+                        <fieldset class="img-upload__start" style="background-image: url(photos/5.jpg); background-size: cover;">
                             <input
                                 id="upload-file"
                                 class="img-upload__input visually-hidden"
@@ -133,7 +133,7 @@
 
                                     <!-- Предварительный просмотр изображения -->
                                     <div class="img-upload__preview">
-                                        <img src="" width="568" height="568" alt="Предварительный просмотр фотографии">
+                                        <img src="" width="568" height="568" alt="Предварительный просмотр фотографии" style="object-fit: contain; object-position: center;">
                                     </div>
 
                                     <!-- Изменение глубины эффекта, накладываемого на изображение -->
@@ -217,13 +217,13 @@
 
                     <!-- Комментарии к изображению -->
                     <div class="social__comment-count">
-                        <span class="comments-count--rendered">5</span> из
+                        <span class="comments-count--rendered">0</span> из
                         <span class="comments-count">125</span> комментариев
                     </div>
                     <ul class="social__comments"></ul>
 
                     <!-- Кнопка для загрузки новой порции комментариев -->
-                    <button class="social__comments-loader comments-loader" type="button">Загрузить еще</button>
+                    <button class="social__comments-loader comments-loader" type="button" style="pointer-events: all;">Загрузить еще</button>
 
                     <!-- Форма для отправки комментария -->
                     <div>
@@ -267,8 +267,8 @@
                     Разработка:
                     <a
                         class="copyright__link copyright__link--text"
-                        href="https://t.me/anatolev_max"
-                    >WebdotStudio</a>
+                        href="https://t.me/augitaro"
+                    >Ужасный горец</a>
                 </p>
             </div>
             <ul class="page-footer__contacts contacts">
@@ -393,7 +393,14 @@
     <!-- Шаблон изображения случайного пользователя -->
     <template id="picture">
         <a href="#" class="picture">
-            <img class="picture__img" src="" width="182" height="182" alt="">
+            <img
+                class="picture__img"
+                src=""
+                width="182"
+                height="182"
+                alt=""
+                style="object-fit: cover; object-position: center; width: 182px; height: 182px;"
+            >
             <p class="picture__info">
                 <span class="picture__comments"></span>
                 <span class="picture__likes"></span>
@@ -452,6 +459,7 @@
         </div>
     </template>
 
+    <!-- effect-item -->
     <template id="effect-item">
         <li class="effects__item">
             <input
@@ -462,7 +470,7 @@
                 value="1"
             >
             <label class="effects__label" for="effect-none">
-                <span class="effects__preview effects__preview--none"></span>
+                <span class="effects__preview" style="background-size: contain; background-position: center;"></span>
             </label>
         </li>
     </template>
@@ -482,7 +490,7 @@
         <span class="comments-loader--active"></span>
     </template>
 
-    <script src="https://kit.fontawesome.com/9fd12c653b.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1454497c85.js" crossorigin="anonymous"></script>
     <script src="./nouislider/nouislider.js"></script>
     <script src="./bundle.js"></script>
 </body>

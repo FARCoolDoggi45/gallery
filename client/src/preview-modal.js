@@ -28,12 +28,15 @@ const renderPicturePreview = (picture) => {
 const openPreviewModal = (picture) => {
     renderPicturePreview(picture);
     previewModalElement.classList.remove("hidden");
+    document.body.style.overflow = 'hidden';
+    console.warn(1);
     previeModalCloseElement.addEventListener('click', closePreviewModal);
     document.addEventListener('keydown', onModalEscKeydown);
 };
 
 const closePreviewModal = () => {
     previewModalElement.classList.add('hidden');
+    document.body.style.overflow = 'initial';
     previeModalCloseElement.removeEventListener('click', closePreviewModal);
     document.removeEventListener('keydown', onModalEscKeydown);
 };

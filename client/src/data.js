@@ -1,11 +1,11 @@
 import {getRandomInt, getRandomArrayElement} from "./util.js";
 import {PICTURE_DESCRIPTIONS, COMMENT_MESSAGES, USER_NAMES} from "./const.js";
 
-const MAX_COMMENT_COUNT = 10
+const MAX_COMMENT_COUNT = 40;
 
 function generateUser() {
     return {
-        avatar: `./img/avatars/${getRandomInt(1, 10)}.jpg`,
+        avatar: `./img/avatars/${getRandomInt(1, 40)}.jpg`,
         name: getRandomArrayElement(USER_NAMES)
     };
 }
@@ -41,7 +41,7 @@ function generatePicture(maxId) {
 
     return {
         id: pictureId,
-        url: `./photos/${getRandomInt(1, 25)}.jpg`,
+        url: `./photos/${getRandomInt(1, 70)}.jpg`,
         description: getRandomArrayElement(PICTURE_DESCRIPTIONS),
         likes: getRandomInt(1, 2000),
         comments: comments 

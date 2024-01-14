@@ -12,16 +12,16 @@ const PICTURE_DESCRIPTIONS = [
 ];
 
 const COMMENT_MESSAGES = [
-    'Что ты предпочитаешь: путешествия на море или горы?',
-    'Какой твой самый любимый вид спорта?',
-    'Что бы ты выбрал: быть богатым и несчастливым или бедным и счастливым?',
-    'Какой твой самый незабываемый момент из детства?',
-    'Если бы ты мог поговорить с любым историческим персонажем, кто бы это был и о чем бы ты с ним говорил?',
-    'Какого рода книги ты любишь читать?',
-    'Какую страну ты бы хотел посетить в своем следующем отпуске?',
-    'Какой самый смешной подарок ты когда-либо получал?',
-    'Если бы ты мог стать профессиональным в чем-то, что бы это было?',
-    'Какую музыку ты предпочитаешь слушать?',
+    'Анонимусы топ',
+    'Анонимусы сила',
+    'Обожаю анонимусов',
+    'Люблю анонимусов',
+    'Анонимусы класс',
+    'За анонимусов!!',
+    'Анонимусы гении',
+    'Анонимуc stronger',
+    'Анонимусы realy better',
+    'Анонимус Настя',
 ];
 
 const USER_NAMES = [
@@ -37,8 +37,66 @@ const USER_NAMES = [
     'Оксана',
 ];
 
+const EFFECTS = [ 
+    { 
+        name: 'none', 
+        css_filter: null, 
+        range_min: null, 
+        range_max: null, 
+        step: null, 
+        start: null, 
+        unit: null, 
+    }, 
+    { 
+        name: 'chrome', 
+        css_filter: 'grayscale', 
+        range_min: 0, 
+        range_max: 1, 
+        step: 0.1, 
+        start: 1, 
+        unit: null, 
+    }, 
+    { 
+        name : 'sepia', 
+        css_filter: 'sepia', 
+        range_min: 0, 
+        range_max: 1, 
+        step: 0.1, 
+        start: 1, 
+        unit: null, 
+    }, 
+    { 
+        name: 'marvin', 
+        css_filter: 'invert', 
+        range_min: 0, 
+        range_max: 100, 
+        step: 1, 
+        start: 100, 
+        unit: '%', 
+    }, 
+    { 
+        name: 'phobos', 
+        css_filter: 'blur', 
+        range_min: 0, 
+        range_max: 3, 
+        step: 0.1, 
+        start: 3, 
+        unit: 'px', 
+    }, 
+    { 
+        name: 'heat', 
+        css_filter: 'brightness', 
+        range_min: 1, 
+        range_max: 3, 
+        step: 0.1, 
+        start: 3, 
+        unit: null, 
+    } 
+];
+
 export {
     PICTURE_DESCRIPTIONS,
     COMMENT_MESSAGES,
-    USER_NAMES
+    USER_NAMES,
+    EFFECTS
 };
